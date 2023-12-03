@@ -19,7 +19,7 @@ class CustomBottomAppBar extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
-                Navigator.popAndPushNamed(context, HomeScreen.routeName);
+                Navigator.popAndPushNamed(context, SearchScreen.routeName);
               },
               color: Colors.white,
               iconSize: 30,
@@ -29,16 +29,8 @@ class CustomBottomAppBar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                Navigator.popAndPushNamed(context, SearchScreen.routeName);
+                Navigator.popAndPushNamed(context, PostScreen.routeName);
               },
-              color: Colors.white,
-              iconSize: 30,
-              icon: const Icon(
-                Icons.search,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
               color: Colors.white,
               iconSize: 30,
               icon: const Icon(

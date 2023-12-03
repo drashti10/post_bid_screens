@@ -20,65 +20,49 @@ class User {
       id: '1',
       username: 'Massimo',
       imagePath: 'assets/images/image_1.jpg',
-      followers: 100,
-      followings: 100,
-      likes: 50,
+    
     ),
     User(
       id: '2',
       username: 'John',
       imagePath: 'assets/images/image_2.jpg',
-      followers: 200,
-      followings: 200,
-      likes: 500,
+      
     ),
     User(
       id: '3',
       username: 'Laura',
       imagePath: 'assets/images/image_3.jpg',
-      followers: 1000,
-      followings: 1000,
-      likes: 5000,
+    
     ),
     User(
       id: '4',
       username: 'Graphics10',
       imagePath: 'assets/images/image_4.jpg',
-      followers: 10,
-      followings: 10,
-      likes: 50,
+      
     ),
     User(
       id: '5',
       username: 'Massimo',
       imagePath: 'assets/images/image_1.jpg',
-      followers: 100,
-      followings: 100,
-      likes: 50,
+     
     ),
     User(
       id: '6',
       username: 'John',
       imagePath: 'assets/images/image_2.jpg',
-      followers: 200,
-      followings: 200,
-      likes: 500,
+    
     ),
     User(
       id: '7',
       username: 'Laura',
       imagePath: 'assets/images/image_3.jpg',
-      followers: 1000,
-      followings: 1000,
-      likes: 5000,
+    
     ),
     User(
       id: '8',
       username: 'Graphics10',
       imagePath: 'assets/images/image_4.jpg',
-      followers: 10,
-      followings: 10,
-      likes: 50,
+   
     ),
   ];
 }

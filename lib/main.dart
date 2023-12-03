@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'screens/screens.dart';
 
 void main() {
@@ -17,9 +16,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        HomeScreen.routeName: (context) => const HomeScreen(),
-        ProfileScreen.routeName: (context) => const ProfileScreen(),
         SearchScreen.routeName: (context) => const SearchScreen(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        PostScreen.routeName: (context)  =>  PostScreen(),
+        ProfileScreen.routeName: (context) => const ProfileScreen(),
+        
+        
       },
     );
   }

@@ -5,7 +5,7 @@ import '../models/models.dart';
 import '../widgets/widgets.dart';
 
 class SearchScreen extends StatelessWidget {
-  static const routeName = '/search';
+  static const routeName = '/search_screen';
 
   const SearchScreen({Key? key}) : super(key: key);
 
@@ -20,7 +20,7 @@ class SearchScreen extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          'Discover',
+          'Current Issues',
           style: Theme.of(context)
               .textTheme
               .titleLarge!
@@ -30,14 +30,24 @@ class SearchScreen extends StatelessWidget {
       bottomNavigationBar: const CustomBottomAppBar(),
       body: MasonryGridView.count(
         shrinkWrap: true,
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(9.0),
         itemCount: users.length,
         crossAxisCount: 2,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         itemBuilder: (context, index) {
           User user = users[index];
-          return _UserCard(user: user, isFirstCard: index == 0);
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BidScreen(user: user),
+                ),
+              );
+            },
+            child: _UserCard(user: user, isFirstCard: index == 0),
+          );
         },
       ),
     );
@@ -110,6 +120,53 @@ class _UserCard extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class BidScreen extends StatelessWidget {
+  final User user;
+
+  BidScreen({required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Place Your Bid'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _UserCard(user: user, isFirstCard: true),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Issue: [Details about the repair issue]',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Enter your bid amount',
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+                const SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    // Add logic to submit the bid
+                  },
+                  child: Text('Submit Bid'),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
